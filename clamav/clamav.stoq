@@ -1,0 +1,32 @@
+[Core]
+Name = clamav
+Module = clamav
+
+[Documentation]
+Author = Jakub Sokołowski
+Version = 0.1
+Website = https://github.com/status-im/stoq-clamav
+Description = Scan content with ClamAV
+
+[options]
+hashpayload = True
+saveresults = True
+
+# Define whether we are using a UNIX socket or networked daemon
+# daemon = network
+daemon = socket
+
+# Seconds between keep alives
+interval = 60
+
+# Time in seconds to wait for scan to finish
+timeout = 10
+
+# ClamAV Daemon host
+host = 127.0.0.1
+
+# ClamAV Daemon port
+port = 3310
+
+# Path to UNIX socket
+socket = /var/run/clamav/clamd.ctl
